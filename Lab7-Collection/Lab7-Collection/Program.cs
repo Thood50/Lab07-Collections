@@ -7,25 +7,102 @@ namespace Lab7_Collection
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
-            Deck<Cards> gameDeck = CreateFullDeck();
-            int count = gameDeck.GetCount();
-            Console.WriteLine($"==========================Start of Deck:({count})=================================");
-            //Print(gameDeck);
-            gameDeck.RemoveCard(52);
-            gameDeck.RemoveCard(51);
-            count = gameDeck.GetCount();
-            Console.WriteLine($"=======================Remove King & Queen of Spades:({count})=============================");
-            //Print(gameDeck);
-            Cards QueenSpades = new Cards(Number.Queen, Suites.Spades);
-            Cards KingSpades = new Cards(Number.King, Suites.Spades);
-            gameDeck.AddCard(QueenSpades);
-            gameDeck.AddCard(KingSpades);
-            count = gameDeck.GetCount();
-            Console.WriteLine($"=======================Add King & Queen of Spades:({count})=============================");
-            //Print(gameDeck);
-            Console.ReadLine();
+            //Console.WriteLine("Hello World!");
+            //Deck<Cards> gameDeck = CreateFullDeck();
+            //int count = gameDeck.GetCount();
+            //Console.WriteLine($"==========================Start of Deck:({count})=================================");
+            ////Print(gameDeck);
+            //gameDeck.RemoveCard(52);
+            //gameDeck.RemoveCard(51);
+            //count = gameDeck.GetCount();
+            //Console.WriteLine($"=======================Remove King & Queen of Spades:({count})=============================");
+            ////Print(gameDeck);
+            //Cards QueenSpades = new Cards(Number.Queen, Suites.Spades);
+            //Cards KingSpades = new Cards(Number.King, Suites.Spades);
+            //gameDeck.AddCard(QueenSpades);
+            //gameDeck.AddCard(KingSpades);
+            //count = gameDeck.GetCount();
+            //Console.WriteLine($"=======================Add King & Queen of Spades:({count})=============================");
+            ////Print(gameDeck);
+            //Console.ReadLine();
 
+                                  
+            Console.WriteLine("Dealer Hand: 0");
+            Console.WriteLine("Player One Hand: 0");
+            Console.WriteLine("Player Two Hand: 0");
+            Console.WriteLine();
+            Console.WriteLine("Hit Enter to deal the cards");
+            Console.ReadLine();
+            Deal();
+
+
+
+        }
+
+        public static void Deal()
+        {
+            Deck<Cards> gameDeck = Setup();
+            Deck<Cards> player1 = new Deck<Cards>();
+            Deck<Cards> player2 = new Deck<Cards>();
+            Deck<Cards> dealer = new Deck<Cards>();
+            int cardCount = gameDeck.GetCount();
+            int count = cardCount / 2;
+            foreach (Cards card in gameDeck)
+            {
+                if (player1.GetCount() == count && player2.GetCount() == count)
+                {
+                    dealer.AddCard(card);
+                }
+                if (player2.GetCount() < count && player1.GetCount() == count)
+                {
+                    player2.AddCard(card);
+                }
+                if (player1.GetCount() < count)
+                {
+                    player1.AddCard(card);
+                }
+            }
+            Console.Write("Dealer Hand: ");
+            Console.ReadLine();
+            foreach (Cards card in dealer)
+            {
+                Console.Write($"{card.CardNumber} of {card.CardSuites} ");
+                Console.ReadLine();
+            }
+            Console.WriteLine();
+            Console.Write("Player One Hand: ");
+            Console.ReadLine();
+            foreach (Cards card in player1)
+            {
+                Console.Write($"{card.CardNumber} of {card.CardSuites} ");
+                Console.ReadLine();
+            }
+            Console.WriteLine();
+            Console.Write("Player Two Hand: ");
+            Console.ReadLine();
+            foreach (Cards card in player2)
+            {
+                Console.Write($"{card.CardNumber} of {card.CardSuites} ");
+                Console.ReadLine();
+            }
+            Console.ReadLine();
+        }
+
+        public static Deck<Cards> Setup()
+        {
+            Deck<Cards> deck = new Deck<Cards>();
+            Cards one = new Cards(Number.King, Suites.Diamonds);
+            Cards two = new Cards(Number.Ace, Suites.Hearts);
+            Cards three = new Cards(Number.Three, Suites.Clubs);
+            Cards four = new Cards(Number.King, Suites.Hearts);
+            Cards five = new Cards(Number.Ten, Suites.Diamonds);
+            deck.AddCard(one);
+            deck.AddCard(two);
+            deck.AddCard(three);
+            deck.AddCard(four);
+            deck.AddCard(five);
+
+            return deck;
         }
 
         public static Deck<Cards> CreateFullDeck()
