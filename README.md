@@ -8,6 +8,14 @@ Diamonds, and Spades.  As is A-typical for a deck of cards.  The goal to to crea
 can be used for any card game.  Like uno for example.  All is needed is to create a new card class for uno, and 
 we should still be able to utilize the class Deck.
 
+<h5> Pre Deal </h5>
+
+![PreDeal](./Assets/PreDeal.PNG)
+
+<h5> Post Deal </h5>
+
+![PostDeal](./Assets/PostDeal.PNG)
+
 <h2> Setup </h2>
 
 -Open VS community  
