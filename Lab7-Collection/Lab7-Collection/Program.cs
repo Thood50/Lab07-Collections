@@ -16,7 +16,12 @@ namespace Lab7_Collection
             gameDeck.RemoveCard(51);
             Console.WriteLine($"=======================Deck - King & Queen of Spades:({count})=============================");
             Print(gameDeck);
-
+            Cards QueenSpades = new Cards(Number.Queen, Suites.Spades);
+            Cards KingSpades = new Cards(Number.King, Suites.Spades);
+            gameDeck.AddCard(QueenSpades);
+            gameDeck.AddCard(KingSpades);
+            Console.WriteLine($"=======================Deck + King & Queen of Spades:({count})=============================");
+            Print(gameDeck);
             Console.ReadLine();
 
         }
