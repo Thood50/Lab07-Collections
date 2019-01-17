@@ -3,7 +3,7 @@ using Lab7_Collection.Classes;
 
 namespace Lab7_Collection
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
@@ -11,17 +11,19 @@ namespace Lab7_Collection
             Deck<Cards> gameDeck = CreateFullDeck();
             int count = gameDeck.GetCount();
             Console.WriteLine($"==========================Start of Deck:({count})=================================");
-            Print(gameDeck);
+            //Print(gameDeck);
             gameDeck.RemoveCard(52);
             gameDeck.RemoveCard(51);
-            Console.WriteLine($"=======================Deck - King & Queen of Spades:({count})=============================");
-            Print(gameDeck);
+            count = gameDeck.GetCount();
+            Console.WriteLine($"=======================Remove King & Queen of Spades:({count})=============================");
+            //Print(gameDeck);
             Cards QueenSpades = new Cards(Number.Queen, Suites.Spades);
             Cards KingSpades = new Cards(Number.King, Suites.Spades);
             gameDeck.AddCard(QueenSpades);
             gameDeck.AddCard(KingSpades);
-            Console.WriteLine($"=======================Deck + King & Queen of Spades:({count})=============================");
-            Print(gameDeck);
+            count = gameDeck.GetCount();
+            Console.WriteLine($"=======================Add King & Queen of Spades:({count})=============================");
+            //Print(gameDeck);
             Console.ReadLine();
 
         }

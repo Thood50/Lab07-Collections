@@ -22,25 +22,37 @@ namespace Lab7_Collection.Classes
                 Array.Resize(ref items, items.Length + 1);
             }
             items[count++] = item;
+            
         }
 
         public bool RemoveCard(int num)
         {
-            int i;
-            for (i = 0; i < count; i++)
+            try
             {
-                if (i >= num)
+                if (num <= 0)
                 {
-                    items[i] = items[i + 1];
+                    return false;
                 }
+                int i;
+                for (i = 0; i < count; i++)
+                {
+                    if (i >= num)
+                    {
+                        items[i] = items[i + 1];
+                    }
+                }
+                if (num > i)
+                {
+                    return false;
+                }
+                Array.Resize(ref items, items.Length - 1);
+                count--;
+                return true;
             }
-            if (num > i)
+            catch(IndexOutOfRangeException)
             {
                 return false;
             }
-            Array.Resize(ref items, items.Length - 1);
-            count--;
-            return true;
         }
 
 
