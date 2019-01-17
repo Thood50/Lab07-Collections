@@ -1,10 +1,46 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Lab7_Collection.Classes
 {
-    class Cards
+    public enum Number
     {
+        Ace = 1,
+        Two,
+        Three,
+        Four,
+        Five,
+        Six,
+        Seven,
+        Eight,
+        Nine,
+        Ten,
+        Jack,
+        Queen,
+        King
+    }
+
+    public enum Suites
+    {
+        Hearts,
+        Diamonds,
+        Clubs,
+        Spades
+    }
+
+
+    public class Cards
+    {
+        public Number CardNumber { get; set; }
+
+        public Suites CardSuites { get; set; }
+
+        public Cards(Number cardnumber, Suites cardsuites)
+        {
+            CardNumber = cardnumber;
+            CardSuites = cardsuites;
+        }
     }
 }
