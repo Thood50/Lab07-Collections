@@ -12,7 +12,13 @@ namespace Lab7_Collection
             int count = gameDeck.GetCount();
             Console.WriteLine($"==========================Start of Deck:({count})=================================");
             Print(gameDeck);
+            gameDeck.RemoveCard(52);
+            gameDeck.RemoveCard(51);
+            Console.WriteLine($"=======================Deck - King & Queen of Spades:({count})=============================");
+            Print(gameDeck);
+
             Console.ReadLine();
+
         }
 
         public static Deck<Cards> CreateFullDeck()
