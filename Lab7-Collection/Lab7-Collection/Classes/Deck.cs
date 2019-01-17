@@ -43,6 +43,7 @@ namespace Lab7_Collection.Classes
             return true;
         }
 
+
         public IEnumerator<T> GetEnumerator()
         {
             for (int i = 0; i < count; i++)
