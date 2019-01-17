@@ -17,9 +17,9 @@ namespace Lab7_Collection.Classes
         Eight,
         Nine,
         Ten,
-        Jack,
-        Queen,
-        King
+        Jack = 11,
+        Queen = 12,
+        King = 13
     }
 
     public enum Suites
