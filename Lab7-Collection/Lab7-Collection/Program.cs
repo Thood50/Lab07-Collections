@@ -9,7 +9,10 @@ namespace Lab7_Collection
         {
             Console.WriteLine("Hello World!");
             Deck<Cards> gameDeck = CreateFullDeck();
-            Console.WriteLine("===========================================================");
+            int count = gameDeck.GetCount();
+            Console.WriteLine($"==========================Start of Deck:({count})=================================");
+            Print(gameDeck);
+            Console.ReadLine();
         }
 
         public static Deck<Cards> CreateFullDeck()
@@ -123,6 +126,12 @@ namespace Lab7_Collection
             return deckOfCards;
         }
 
-        public 
+        public static void Print(Deck<Cards> deck)
+        {
+            foreach(Cards card in deck)
+            {
+                Console.WriteLine($"{card.CardNumber} of {card.CardSuites}");
+            }
+        }
     }
 }

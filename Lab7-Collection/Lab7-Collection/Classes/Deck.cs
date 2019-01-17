@@ -54,7 +54,7 @@ namespace Lab7_Collection.Classes
 
         IEnumerator IEnumerable.GetEnumerator()
         {
-            retrun GetEnumerator();
+            return GetEnumerator();
         }
     }
 }
