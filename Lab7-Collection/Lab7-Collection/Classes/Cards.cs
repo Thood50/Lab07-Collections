@@ -37,6 +37,12 @@ namespace Lab7_Collection.Classes
 
         public Suites CardSuites { get; set; }
 
+
+        /// <summary>
+        /// Constructor method for each card
+        /// </summary>
+        /// <param name="cardnumber"></param>
+        /// <param name="cardsuites"></param>
         public Cards(Number cardnumber, Suites cardsuites)
         {
             CardNumber = cardnumber;

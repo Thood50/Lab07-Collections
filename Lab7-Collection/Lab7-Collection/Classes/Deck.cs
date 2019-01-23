@@ -15,6 +15,10 @@ namespace Lab7_Collection.Classes
             return count;
         }
 
+        /// <summary>
+        /// Adds a card to the deck
+        /// </summary>
+        /// <param name="item"></param>
         public void AddCard(T item)
         {
             if (count == items.Length)
@@ -25,6 +29,11 @@ namespace Lab7_Collection.Classes
             
         }
 
+        /// <summary>
+        /// Takes in a intger for a index spot, then removes a card at that location in the Deck
+        /// </summary>
+        /// <param name="num"></param>
+        /// <returns>true or false depending on successful card removal</returns>
         public bool RemoveCard(int num)
         {
             try
@@ -55,7 +64,10 @@ namespace Lab7_Collection.Classes
             }
         }
 
-
+        /// <summary>
+        /// Contract with the Interface being allowing us to use foreach over our deck
+        /// </summary>
+        /// <returns>a card</returns>
         public IEnumerator<T> GetEnumerator()
         {
             for (int i = 0; i < count; i++)
@@ -64,6 +76,10 @@ namespace Lab7_Collection.Classes
             }
         }
 
+        /// <summary>
+        /// GetEnumerator unwanted little brother
+        /// </summary>
+        /// <returns>calls big brother</returns>
         IEnumerator IEnumerable.GetEnumerator()
         {
             return GetEnumerator();

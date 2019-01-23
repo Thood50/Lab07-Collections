@@ -39,6 +39,9 @@ namespace Lab7_Collection
 
         }
 
+        /// <summary>
+        /// Its deals the demo cards out to the two players and the dealer
+        /// </summary>
         public static void Deal()
         {
             Deck<Cards> gameDeck = Setup();
@@ -88,6 +91,10 @@ namespace Lab7_Collection
             Console.ReadLine();
         }
 
+        /// <summary>
+        /// Generates demo deck
+        /// </summary>
+        /// <returns>a deck</returns>
         public static Deck<Cards> Setup()
         {
             Deck<Cards> deck = new Deck<Cards>();
@@ -105,6 +112,10 @@ namespace Lab7_Collection
             return deck;
         }
 
+        /// <summary>
+        /// Generates all my hard coded cards and adds them to a Deck
+        /// </summary>
+        /// <returns>a deck</returns>
         public static Deck<Cards> CreateFullDeck()
         {
             Deck<Cards> deckOfCards = new Deck<Cards>();
@@ -216,6 +227,10 @@ namespace Lab7_Collection
             return deckOfCards;
         }
 
+        /// <summary>
+        /// Prints each card in the deck
+        /// </summary>
+        /// <param name="deck"></param>
         public static void Print(Deck<Cards> deck)
         {
             foreach(Cards card in deck)
