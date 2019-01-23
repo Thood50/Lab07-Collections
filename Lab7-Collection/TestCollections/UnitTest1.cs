@@ -52,5 +52,23 @@ namespace TestCollections
             int count = deck.GetCount();
             Assert.Equal(1, count);
         }
+
+       [Fact]
+       public void TestCardSuites()
+        {
+            Deck<Cards> deck = new Deck<Cards>();
+            Cards AceHeart = new Cards(Number.Ace, Suites.Hearts);
+            AceHeart.CardSuites = Suites.Diamonds;
+            Assert.Equal(Suites.Diamonds, AceHeart.CardSuites);
+        }
+
+        [Fact]
+        public void TestCardNumber()
+        {
+            Deck<Cards> deck = new Deck<Cards>();
+            Cards AceHeart = new Cards(Number.Ace, Suites.Hearts);
+            AceHeart.CardNumber = Number.King;
+            Assert.Equal(Number.King, AceHeart.CardNumber);
+        }
     }
 }
